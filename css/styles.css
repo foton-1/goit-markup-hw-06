@@ -10,7 +10,7 @@
   --typical-ls: 0.02em;
   --custommers-color-norm: #8e8f99;
   --max-width-section: 1440px;
-  --h-timing-duration: 650ms;
+  --h-timing-duration: 250ms;
   --h-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -488,6 +488,7 @@ social-link задавши посиланню висоту і ширину,
   margin-right: 120px;
 }
 .footer-social-box {
+  margin-right: 80px;
   /*display: inline-block;
   max-width: 208px;
   vertical-align: top;*/
@@ -498,6 +499,8 @@ social-link задавши посиланню висоту і ширину,
   letter-spacing: var(--typical-ls);
   color: var(--color-theme-dark);
   margin-bottom: 16px;
+  
+
 }
 .footer-social-list {
   list-style: none;
@@ -516,6 +519,77 @@ social-link задавши посиланню висоту і ширину,
 }
 .footer-social-item {
 }
+
+.footer-subscribe-box {
+  display: flex;
+  gap: 24px;
+  }
+
+.subscribe-input {
+  width: 264px;
+  height: 40px;
+  color: #ffffff;
+  background-color: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  
+}
+.subscribe-input::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+  
+  
+  
+}
+.footer-subscribe-box {
+  
+}
+
+.btn-subscribe {
+  display: flex;
+  gap: 16px;
+  width: 165px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  line-height: var(--typical-lh);
+  letter-spacing: 0.04em;
+  color: var(--color-theme-dark);
+  background: var(--theme-dark);
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  transition: background-color var(--h-timing-duration);
+}
+.btn-subscribe:hover,
+.btn-subscribe:focus {
+  background-color: var(--akcent-color);
+  /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);*/
+}
+.btn-subscribe::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: inherit;
+  background-image: url(../images/futer-send-icon.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+
+ 
 /*=========================================/FOOTER==*/
 /*--------------------------------------PORTFOLIO---*/
 .portfolio-section {
@@ -628,6 +702,8 @@ social-link задавши посиланню висоту і ширину,
   transform: translate(0, 0);
 }
 
+
+
 /*----------------------------------------Modal--*/
 
 .backdrop {
@@ -636,7 +712,6 @@ social-link задавши посиланню висоту і ширину,
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
-
   transition: opacity 300ms linear, visibility 300ms linear;
 }
 
@@ -646,13 +721,15 @@ social-link задавши посиланню висоту і ширину,
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 300ms linear;
-
   width: 408px;
   min-height: 576px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 /*--Стан схованої модалки:--*/
 .backdrop.is-hidden .modal {
@@ -669,16 +746,24 @@ social-link задавши посиланню висоту і ширину,
   background: var(--text-color-light);
   border: 1px solid rgba(0, 0, 0, 0.1);
 
-  margin-top: 24px;
-  margin-right: 24px;
   margin-left: auto;
+  margin-bottom: 24px;
   padding: 0;
+  transition: background var(--h-timing-duration) var(--h-timing-function);
+}
+.btn-modal-close:focus,
+.btn-modal-close:hover {
+  background: var(--akcent-color);
 }
 .modal-close-icon {
   width: 8px;
   height: 8px;
+  transition: fill var(--h-timing-duration) var(--h-timing-function);
 }
-
+.btn-modal-close:focus .modal-close-icon,
+.btn-modal-close:hover .modal-close-icon {
+  fill: #ffffff;
+}
 .is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -686,3 +771,168 @@ social-link задавши посиланню висоту і ширину,
 }
 /*--замість is-hidden можна display:none,
 але він не анімується*/
+
+/*-----------------------------------------Modal-Form--*/
+.modal-form {
+}
+.modal-title {
+  font-weight: 500;
+  /*font-size: 16px;*/
+  line-height: var(--typical-lh);
+  letter-spacing: var(--typical-ls);
+  color: var(--main-title-color);
+  margin-bottom: 16px;
+  text-align: center;
+}
+.modal-field-label {
+  display: block;
+  margin-bottom: 8px;
+}
+.modal-input-text {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--custommers-color-norm);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.modal-input-wrap-span {
+  position: relative;
+  /*--margin-bottom: 8px;--*/
+  display: block;
+}
+.modal-input-wrap-div {
+  position: relative;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 38px;
+  transition: border-color var(--h-timing-duration);
+}
+.modal-input:focus {
+  outline: none;
+  border-color: var(--theme-dark);
+}
+.modal-input:focus + .modal-input-icon {
+  fill: var(--theme-dark);
+}
+.modal-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translatey(-50%);
+  transition: background-color var(--h-timing-duration) var(--h-timing-function);
+}
+.pers {
+  width: 18px;
+  height: 18px;
+}
+.phone,
+.email {
+  width: 18px;
+  height: 24px;
+}
+.modal-field {
+  display: block;
+  margin-bottom: 16px;
+}
+.btn-modal-send {
+  min-width: 169px;
+  height: 56px;
+  background: var(--theme-dark);
+  font-weight: 500;
+  /*font-size: 16px;*/
+  line-height: var(--typical-lh);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-style: none;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  /*--text-align: center;--*/
+  padding-left: 16px;
+  padding-right: 16px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  transition: background-color var(--h-timing-duration) var(--h-timing-function);
+}
+
+.btn-modal-send:hover,
+.btn-modal-send:focus {
+  background-color: var(--akcent-color);
+ }
+.modal-form-message {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  transition: border-color var(--h-timing-duration);
+  display: block;
+}
+/*--Зміна властивостей текста placeholder--*/
+.modal-form-message::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.modal-form-message:focus {
+  outline: none;
+  border-color: var(--theme-dark);
+  letter-spacing: 0.04em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-check-desc {
+  display: flex;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #757575;
+  margin-bottom: 24px;
+}
+/*--Створення пробілу (коли схлопнулись флекс елементи з текстом)
+&nbsp - це оригінальний пробіл від браузера--*/
+.modal-form-check-desc::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid #2e2f42;
+  border-radius: 2px;
+  margin-right: 8px;
+  display: block;
+}
+.modal-form-check:checked + .modal-form-check-desc::before {
+  background-color: var(--akcent-color);
+  border: 1.25px solid var(--akcent-color);
+  border-radius: 2px;
+  background-image: url(../images/modal-sign-mark.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+/*--Сховати оригінальний чекбокс - додати йому клас --*/
+/*--Фокус на чекбокс - (має бути на інтерактивних елементах) -
+на бефор повісити фокус не можна. Робимо фейковий фокус--*/
+.modal-form-check:focus + .modal-form-check-desc::before {
+  outline: none;
+  border-color: var(--theme-dark);
+}
+/*--інший варіант фейкового фокусу - створити лейбл, вставити 
+svg іконку з опасіті 0, і при чек змінювати опасіті на 1--*/
+
