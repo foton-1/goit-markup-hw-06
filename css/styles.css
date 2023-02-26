@@ -528,16 +528,16 @@ social-link задавши посиланню висоту і ширину,
 .subscribe-input {
   width: 264px;
   height: 40px;
-  color: #ffffff;
+  color: var(--color-theme-dark);
   background-color: inherit;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  
+  drop-shadow
 }
 .subscribe-input::placeholder {
   font-weight: 400;
@@ -571,7 +571,7 @@ social-link задавши посиланню висоту і ширину,
   padding-left: 24px;
   padding-right: 24px;
   border-style:none ;
-  transition: background-color var(--h-timing-duration) var(--h-timing-function: cubic-bezier(0.4, 0, 0.2, 1));
+  transition: background-color var(--h-timing-duration) var(--h-timing-function);
 }
 .btn-subscribe:hover,
 .btn-subscribe:focus {
@@ -619,7 +619,7 @@ social-link задавши посиланню висоту і ширину,
   border: 1px solid var(--text-color-light);
   border-radius: 4px;
 
-  transition-property: background-color, color, border, box-shadow;
+  transition-property: background-color, color, border-color, box-shadow;
   transition-duration: var(--h-timing-duration);
   transition-timing-function: var(--h-timing-function);
 }
@@ -627,7 +627,7 @@ social-link задавши посиланню висоту і ширину,
 .filter-btn:focus {
   background-color: var(--akcent-color);
   color: var(--color-theme-dark);
-  border: 1px transparent;
+  border-color: transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -731,6 +731,7 @@ social-link задавши посиланню висоту і ширину,
   padding-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
+  padding-bottom: 24px;
 }
 /*--Стан схованої модалки:--*/
 .backdrop.is-hidden .modal {
@@ -763,7 +764,7 @@ social-link задавши посиланню висоту і ширину,
 }
 .btn-modal-close:focus .modal-close-icon,
 .btn-modal-close:hover .modal-close-icon {
-  fill: #ffffff;
+  fill: var(--color-theme-dark);
 }
 .is-hidden {
   opacity: 0;
@@ -791,7 +792,7 @@ social-link задавши посиланню висоту і ширину,
 }
 .modal-input-text {
   display: block;
-  font-weight: 400;
+  
   font-size: 12px;
   line-height: 1.33;
   color: var(--custommers-color-norm);
@@ -815,6 +816,9 @@ social-link задавши посиланню висоту і ширину,
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 38px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   transition: border-color var(--h-timing-duration);
 }
 .modal-input:focus {
@@ -854,7 +858,7 @@ social-link задавши посиланню висоту і ширину,
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-style: none;
-  color: #ffffff;
+  color: var(--color-theme-dark);
   letter-spacing: 0.04em;
   /*--text-align: center;--*/
   padding-left: 16px;
@@ -863,7 +867,6 @@ social-link задавши посиланню висоту і ширину,
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 24px;
   transition: background-color var(--h-timing-duration) var(--h-timing-function);
 }
 
@@ -878,30 +881,32 @@ social-link задавши посиланню висоту і ширину,
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-top: 8px;
+  padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
   transition: border-color var(--h-timing-duration);
   display: block;
+  
 }
 /*--Зміна властивостей текста placeholder--*/
 .modal-form-message::placeholder {
-  font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .modal-form-message:focus {
   outline: none;
   border-color: var(--theme-dark);
   letter-spacing: 0.04em;
-  color: rgba(117, 117, 117, 0.5);
+  
 }
 
 .modal-form-check-desc {
   display: flex;
   align-items: center;
 
-  font-weight: 400;
+  
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
@@ -910,11 +915,14 @@ social-link задавши посиланню висоту і ширину,
 }
 /*--Створення пробілу (коли схлопнулись флекс елементи з текстом)
 &nbsp - це оригінальний пробіл від браузера--*/
+.policy-link {
+  color: var(--theme-dark);
+}
 .modal-form-check-desc::before {
   content: '';
   width: 16px;
   height: 16px;
-  border: 1.25px solid #2e2f42;
+  border: 1.25px solid var(--main-title-color);
   border-radius: 2px;
   margin-right: 8px;
   display: block;
